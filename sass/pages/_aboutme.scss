@@ -1,0 +1,113 @@
+// sass/pages/_aboutme.scss
+@use 'sass:color';
+
+// Define your variables locally with a unique name
+$font-primary: 'Sanchez', serif;
+$bg-color: #f4f4f4;
+$text-color: #222;
+$accent-color-aboutme: #2a2a2a;   // renamed variable
+$link-color: #0056b3;
+$border-radius: 8px;
+
+body {
+  font-family: $font-primary;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+header.grid-con {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #ffffff, #eaeaea);
+  border-bottom: 2px solid #ccc;
+
+  .box {
+    padding: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: color.adjust($link-color, $lightness: -15%);
+    }
+  }
+
+  #logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $accent-color-aboutme;
+  }
+
+  #menu {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  #intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: right;
+    color: $accent-color-aboutme;
+  }
+}
+
+#intro1, #intro2 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: $accent-color-aboutme;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+#intro2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+#intro3 {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  white-space: pre-line;
+  color: $text-color;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.1rem;
+    padding: 2.5rem 3rem;
+  }
+
+  &::before {
+    content: "🧠 ";
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  span.quote {
+    display: block;
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    color: $accent-color-aboutme;
+    border-left: 4px solid $accent-color-aboutme;
+    padding-left: 1rem;
+  }
+}
