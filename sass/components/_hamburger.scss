@@ -1,0 +1,46 @@
+#hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+}
+
+#mobile-menu {
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    #hamburger,
+    #mobile-menu {
+        display: none !important;
+    }
+}
+
+#hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}
