@@ -76,4 +76,12 @@ $input-radius: 6px;
       background-color: $accent-color;
     }
   }
+
+    .success-msg {
+  color:green;
+}
+
+.error-msg {
+  color:red;
+}
 }

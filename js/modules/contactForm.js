@@ -1,7 +1,13 @@
 export function contactForm() {
     //variables
-const form = document.querySelector('#updateContactForm');
 
+  console.log('h2');
+
+const form = document.querySelector('#updateContactForm');
+const successMsg = document.querySelector('.success-msg');
+const errorMsg = document.querySelector('.error-msg');
+console.log(successMsg, errorMsg);
+console.log('h1');
 //functions
 function submitAjaxForm(e) {
     e.preventDefault();
@@ -18,6 +24,12 @@ function submitAjaxForm(e) {
       "&message=" +
       currentForm.elements.message.value;
 
+      successMsg.classList.add("hidden");
+      
+
+      errorMsg.classList.add("hidden");
+
+
       fetch(path, {
         method: "POST",
         headers: {
@@ -25,8 +37,16 @@ function submitAjaxForm(e) {
         },
         body: formFields
       })
-      .then(response => response.json())
-      .catch(error => console.log(error));
+      .then(response => {
+        successMsg.classList.remove("hidden");
+        console.log('run, ', successMsg);
+      })
+      .catch(error => {
+        errorMsg.classList.remove("hidden");
+                console.log('error, ', successMsg);
+
+        console.log(error);
+      });
 
 };
 
