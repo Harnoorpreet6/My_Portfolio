@@ -65,6 +65,8 @@
 
         <input name="submit" type="submit" value="Send" id="submit-button" />
       </form>
+       <p  class="hidden success-msg"> Message is sent successfully</p>
+        <p class="hidden error-msg"> There is an error</p>
     </div>
   </section>
 
